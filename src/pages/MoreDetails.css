@@ -1,0 +1,8 @@
+.list-ticker thead{
+    background-color: #ddd;
+}
+
+.list-ticker thead td{
+    border: solid 1px black;
+}
+
