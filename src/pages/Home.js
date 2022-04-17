@@ -86,7 +86,7 @@ const Home = () => {
                 <button className="btn btn-primary" onClick={() => setSelectTickersOpened(true)}>Adicionar Tickers</button>
             </div>
         </nav>
-        <h1 className="text-center m-5">Mercado</h1>
+        <h1 className="text-center m-5">Market Monitoring</h1>
         <div className="row my-4 justify-content-center">
             {companies.length !== 0 && companies.map((x,i)=>{
                 return(
