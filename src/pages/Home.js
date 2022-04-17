@@ -104,7 +104,7 @@ const Home = () => {
                                         </button>
                                         <div className="card-body">
                                             <p> Preço Atual: {formatValue(y.currentPriceValue)} </p>
-                                            <p> Preço Variação: {formatValue(y.changePercentValue)}% </p>
+                                            <p> Variação: {formatValue(y.changePercentValue)}% </p>
                                         </div>
                                         <button onClick={() => removeItem(y.tickerId,y.region)} className="btn btn-secondary">Excluir</button>
                                     </div>
