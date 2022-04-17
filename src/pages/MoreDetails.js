@@ -46,6 +46,12 @@ const MoreDetails = () => {
                 .then(x => update(x))
     }
 
+    const formatValue = (value) => {
+        let newValue = parseFloat(value).toFixed(2)
+
+        return newValue.toString()
+    }
+
     return(
         <div>
             <nav className="navbar navbar-light bg-light">
@@ -72,8 +78,8 @@ const MoreDetails = () => {
                                     <tr>
                                         <td>{ticker.lenght !== 0 && ticker[0]?.tickerId}</td>
                                         <td>{ticker.lenght !== 0 && ticker[0]?.exchage}</td>
-                                        <td>{ticker.lenght !== 0 && ticker[0]?.currentPriceValue}</td>
-                                        <td>{ticker.lenght !== 0 && ticker[0]?.changePercentValue}</td>
+                                        <td>{ticker.lenght !== 0 && formatValue(ticker[0]?.currentPriceValue)}</td>
+                                        <td>{ticker.lenght !== 0 && formatValue(ticker[0]?.changePercentValue)}%</td>
                                     </tr>
                                 </tbody>
                             </table>

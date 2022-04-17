@@ -1,11 +1,12 @@
+import RoutesController from "./RoutesController";
+
+console.log(process.env.REACT_APP_ENV)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <>
+      <RoutesController/>
+    </>
   );
 }
 

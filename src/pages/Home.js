@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import tickersApi from "../api/tickersApi"
-import TickersSelect from "../components/tickers/TickersSelect"
+import TickersSelect from "../component/tickers/TickersSelect"
+
 
 const Home = () => {
 
@@ -72,6 +73,12 @@ const Home = () => {
         setTickersSelected((x) => [...x.filter(y => !(y.tickerId === tickerId && y.region === region))])
     }
 
+    const formatValue = (value) => {
+        let newValue = parseFloat(value).toFixed(2)
+
+        return newValue.toString()
+    }
+
     return <>
         <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
@@ -96,8 +103,8 @@ const Home = () => {
                                             <div className="card-header"> {y.tickerId} </div>
                                         </button>
                                         <div className="card-body">
-                                            <p> Preço Atual: {y.currentPriceValue} </p>
-                                            <p> Preço Variação: {y.changePercentValue} </p>
+                                            <p> Preço Atual: {formatValue(y.currentPriceValue)} </p>
+                                            <p> Preço Variação: {formatValue(y.changePercentValue)}% </p>
                                         </div>
                                         <button onClick={() => removeItem(y.tickerId,y.region)} className="btn btn-secondary">Excluir</button>
                                     </div>
@@ -114,7 +121,9 @@ const Home = () => {
             onTickerRemoved={detach} 
             onTicketSelect={atach} 
             opened={selectTickersOpened} 
-            onClose={() => setSelectTickersOpened(false)}/>
+            onClose={() => setSelectTickersOpened(false)}
+        />
+            
     </>
 }
 
